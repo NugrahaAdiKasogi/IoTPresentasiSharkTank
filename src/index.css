@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-blink: blink 1s steps(2, start) infinite;
+  --animate-pop: pop 0.6s ease-out;
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+@keyframes pop {
+  0%   { transform: scale(0.96); background-color: rgb(250 204 21 / 0.35); }
+  100% { transform: scale(1); }
+}
+
+html, body, #root { min-height: 100%; }
+body { font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif; }
+
+/* Angka timer & uang selalu lebar tetap -> bebas layout shift */
+.num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
